@@ -1,0 +1,12 @@
+{
+  "name": "medpics",
+  "displayName": "medpics",
+  "expo": {
+    "name": "medpics",
+    "slug": "medpics",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
