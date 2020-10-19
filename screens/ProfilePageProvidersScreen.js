@@ -45,7 +45,15 @@ export default function ProfilePageProvidersScreen() {
                 </View>
 
                 <View style={{ padding: 15 }}>
-                    <Text style={{ textAlign: "center", marginTop: 15, marginBottom: 35, fontSize: 23, color: "#4F9FEA", fontWeight: "bold" }}>Contact Details</Text>
+                    <Text 
+                    style={{ 
+                        textAlign: "center", 
+                        marginTop: 15, 
+                        marginBottom: 35, 
+                        fontSize: 23, 
+                        color: "#4F9FEA", 
+                        fontWeight: "bold" 
+                        }}>Contact Details</Text>
                     <TextInput placeholder="Adress" placeholderTextColor="#4F9FEA" style={{ backgroundColor: "#F1F8FE", padding: 10, paddingLeft: 25, paddingRight: 25, color: "#4F9FEA", outline: "none", borderRadius: 0 }} />
                     <TextInput placeholder="Zipcode" placeholderTextColor="#4F9FEA" style={{ backgroundColor: "#F1F8FE", padding: 10, paddingLeft: 25, paddingRight: 25, color: "#4F9FEA", outline: "none", borderRadius: 0, marginTop: 15 }} />
                     <TextInput placeholder="Choose a country*" placeholderTextColor="#4F9FEA" style={{ backgroundColor: "#F1F8FE", padding: 10, paddingLeft: 25, paddingRight: 25, color: "#4F9FEA", outline: "none", borderRadius: 0, marginTop: 15 }} />

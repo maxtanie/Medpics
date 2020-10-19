@@ -38,9 +38,44 @@ export default function PatientsLoginScreen({ navigation }) {
                     </View>
                     <View style={styles.centeredView}>
                         <Modal
+                            animationType="fade"
+                            transparent={true}
+                            style={{backgroundColor: "red"}}
+                            visible={modalForgotPassword}
+                            onRequestClose={() => {
+                                Alert.alert("Modal has been closed.");
+                            }}
+                        >
+                            <View style={styles.modalContainer} >
+                                <View style={styles.modalView}>
+                                    <Text style={styles.modalText}>Forgot Password</Text>
+                                    <View style={{paddingLeft: 15, paddingRight: 15}}>
+                                    <View>
+                                        <Text style={{color: "#4F9FEA"}} >Enter your email address to reset your password.</Text>
+                                    </View>
+                                    <View style={{marginTop: 20 }}>
+                        <TextInput placeholder="Email" placeholderTextColor="#4F9FEA" style={{ backgroundColor: "#F1F8FE", padding: 10, borderRadius: 50, paddingLeft: 25, paddingRight: 25, color: "#4F9FEA", outline: "none", borderRadius: 0 }} />
+                        </View>
+
+                        <Button title="Send" buttonStyle={{ marginTop: 20, marginBottom: 0, backgroundColor: "#1976D2", padding: 15, borderRadius: 0 }} />
+
+                                    <TouchableHighlight
+                                        style={{ ...styles.openButton, marginTop: 25 }}
+                                        onPress={() => {
+                                            setModalForgotPasswordVisible(!modalForgotPassword);
+                                        }}
+                                    >
+                                        <Text style={styles.textStyle}>Close</Text>
+                                    </TouchableHighlight>
+                                </View>
+                                </View>
+                            </View>
+                        </Modal>
+
+                        <Modal
                             animationType="none"
                             transparent={true}
-                            visible={modalForgotPassword}
+                            visible={modalActivationLink}
                             onRequestClose={() => {
                                 Alert.alert("Modal has been closed.");
                             }}
@@ -50,12 +85,12 @@ export default function PatientsLoginScreen({ navigation }) {
                                     <Text style={styles.modalText}>Hello World!</Text>
 
                                     <TouchableHighlight
-                                        style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+                                        style={{ ...styles.openButton }}
                                         onPress={() => {
-                                            setModalForgotPasswordVisible(!modalForgotPassword);
+                                            setModalActivationLinkVisible(!modalActivationLink);
                                         }}
                                     >
-                                        <Text style={styles.textStyle}>Hide Modal</Text>
+                                        <Text style={styles.textStyle}>Close</Text>
                                     </TouchableHighlight>
                                 </View>
                             </View>
@@ -81,6 +116,10 @@ export default function PatientsLoginScreen({ navigation }) {
 
                             </TouchableHighlight>
                         </View>
+                        <View style={{marginTop: 25}}>
+                        <Text style={{textAlign: "center", color: "#1565C0", paddingBottom: 30}}>* We recommend using Chrome or Firefox
+                        browsers for optimal functionality.</Text>
+                        </View>
                     </View>
                 </SafeAreaView>
             </ScrollView>
@@ -91,18 +130,20 @@ export default function PatientsLoginScreen({ navigation }) {
 
 
 const styles = StyleSheet.create({
-    centeredView: {
+    modalContainer: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 22
+        backgroundColor: 'rgba(201,229,255,0.55)'
     },
     modalView: {
-        margin: 20,
+        margin: 15,
+        marginTop: "25%",
         backgroundColor: "white",
-        borderRadius: 20,
-        padding: 35,
-        alignItems: "center",
+        // paddingLeft: 15,
+        // paddingRight: 15,
+        paddingTop: 20,
+        paddingBottom: 25,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -113,19 +154,24 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     openButton: {
-        backgroundColor: "#F194FF",
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2
+        marginTop: 20,
     },
     textStyle: {
-        color: "white",
+        color: "#1976D2",
         fontWeight: "bold",
-        textAlign: "center"
+        textAlign: "right",
     },
     modalText: {
+        textAlign: "left",
         marginBottom: 15,
-        textAlign: "center"
+        fontSize: 18,
+        color: "#4F9FEA",
+        fontWeight: "bold",
+        paddingBottom: 15,
+        paddingLeft: 15,
+        borderBottomWidth: 1,
+        borderStyle: "solid",
+        borderBottomColor: "#E9F4FF"
     }
 });
 

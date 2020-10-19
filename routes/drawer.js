@@ -23,7 +23,7 @@ const DrawerNavigator = createDrawerNavigator({
         }
     },
     Login: {
-        screen: FindExpertsScreen,
+        screen: LoginScreen,
         navigationOptions: {
             title: "Login",
             drawerIcon: ({ tintColor }) => <Feather name="log-in" size={16} color={tintColor} />,
