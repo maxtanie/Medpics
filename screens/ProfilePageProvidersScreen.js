@@ -1,16 +1,16 @@
 import React from 'react'
 import { StyleSheet, Text, View, StatusBar, ScrollView, TextInput, Image } from 'react-native';
-import ImagePicker from "react-native-image-picker";
+// import ImagePicker from "react-native-image-picker";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 export default function ProfilePageProvidersScreen() {
 
-    function handleChoosePhoto() {
-        const options = {};
-        ImagePicker.launchImageLibrary(options, response => {
-            console.log("response", response);
-        })
-    }
+    // function handleChoosePhoto() {
+    //     const options = {};
+    //     ImagePicker.launchImageLibrary(options, response => {
+    //         console.log("response", response);
+    //     })
+    // }
     return (
         <View style={styles.container}>
             <ScrollView>
@@ -24,7 +24,7 @@ export default function ProfilePageProvidersScreen() {
                 <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
                     <View style={styles.contentProfile}>
                         <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-between" }}>
-                            <View style={{ width: 50, height: 50, borderRadius: 100, backgroundColor: "#1565C0", marginTop: -25, borderWidth: 3, borderStyle: "solid", borderColor: "#DCEEFE", }} onPress={handleChoosePhoto}>
+                            <View style={{ width: 50, height: 50, borderRadius: 100, backgroundColor: "#1565C0", marginTop: -25, borderWidth: 3, borderStyle: "solid", borderColor: "#DCEEFE", }}>
                                 <FontAwesome5 name="camera" size={20} color="#fff" style={{ textAlign: "center", lineHeight: 45 }} />
                             </View>
                             <View style={{ width: 100, height: 100, borderRadius: 100, backgroundColor: "#fff", borderWidth: 3, borderStyle: "solid", borderColor: "#1565C0", marginTop: -50 }}></View>
