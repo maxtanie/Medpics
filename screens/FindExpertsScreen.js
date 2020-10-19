@@ -41,27 +41,27 @@ export default function FindExpertsScreen() {
     const specialistsName = [
         {
             name: "Abdomen",
-            icon: ""
+            icon: "user"
         },
         {
             name: "Aorta",
-            icon: ""
+            icon: "user"
         },
         {
             name: "Elbow",
-            icon: ""
+            icon: "user"
         },
         {
             name: "Foot & Ankle",
-            icon: ""
+            icon: "user"
         },
         {
             name: "Back pain",
-            icon: ""
+            icon: "user"
         },
         {
             name: "Others",
-            icon: ""
+            icon: "user"
         },
 
     ]
@@ -77,7 +77,7 @@ export default function FindExpertsScreen() {
                     <Image source={fond} style={{ width: "63%", height: 140, marginTop: -55 }} />
                 </View>
                 <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
-                    <View style={{ width: "70%", height: 50, backgroundColor: "#fff", borderRadius: 50, marginTop: -25, textAlign: "center" }}>
+                    <View style={styles.nav}>
                         <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-around", fontSize: 25 }}>
                             {linkName.map((link, index) => {
                                 return (
@@ -96,6 +96,53 @@ export default function FindExpertsScreen() {
                     </NavigationContainer>
                 </View>
 
+                <View  style={{flex: 1, flexDirection: "row", flexWrap: "wrap", textAlign: "center", justifyContent: "center", alignItems: "center", marginTop: 30 }}>
+                    {specialistsName.map((name, index) => {
+                        return (
+                   
+                                <View>
+                                    <View style={{backgroundColor: "#0F4D94", width: 50, height: 50, borderRadius: 50,  marginRight: 25}}> 
+                                        <FontAwesome5 name={name.icon} size={15} style={{textAlign: "center", lineHeight: 50, color: "#fff"}}/>
+                                    </View >
+
+                                    <View style={{marginBottom: 25, textAlign: "center"}} >
+                                    <Text style={{textAlign:"center", color: "#0F4D94",  marginTop: 8, marginRight: 25}}>{name.name}</Text>
+                                    </View>
+                                </View>
+                        
+                        )
+                    })}
+                </View>
+
+                <View style={styles.findExperts}>
+                    <View style={{flex: 1, flexDirection: "row",alignItems: "center"}}>
+                        <View>
+                            <View>
+                                <Image source={require("../assets/find-experts/fond.png")}  style={{width: 85, height: 85, marginRight: 15, borderRadius: 50}} />
+                            </View>
+                            <View style={{marginTop: 10, backgroundColor: "#32CF19", borderRadius: 15, padding: 5,}}>
+                                <Text style={{color: "#fff", fontSize: 13, textAlign: "center"}}>
+                                    Verified expert
+                                </Text>
+                            </View>
+                        </View>
+
+                        <View style={{minHeight: 55,  marginTop: -43,}}>
+                            <View style={{flex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+                                <Text style={{fontWeight: "bold", color: "#1665C1"}}>Roland Talanow - </Text>
+                                <Text style={{color: "#1665C1"}}>Cayman Islands</Text>
+                            </View>
+                            
+                            <View>
+                            <Text style={{fontWeight: "bold", color: "#1665C1"}}>Radiology</Text>
+                            </View>
+                            
+                            
+                        </View>
+                    </View>
+        
+                </View>
+
             </ScrollView>
         </View>
     )
@@ -104,6 +151,33 @@ export default function FindExpertsScreen() {
 const styles = StyleSheet.create({
     container: {
         paddingBottom: 0
+    },
+    nav : {
+        width: "70%", height: 50, backgroundColor: "#fff", borderRadius: 50, marginTop: -25, textAlign: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
+    },
+    findExperts: {
+        backgroundColor: "white",
+        padding: 10,
+         paddingTop: 20,
+          paddingBottom: 20, 
+          marginLeft: 15,
+           marginRight: 15,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
     },
     accountName: {
         padding: 20,

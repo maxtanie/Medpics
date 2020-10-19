@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: 'rgba(201,229,255,0.55)'
+        backgroundColor: 'rgba(201,229,255,0.5)'
     },
     modalView: {
         margin: 15,

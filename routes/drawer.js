@@ -16,7 +16,7 @@ import { Feather } from "@expo/vector-icons";
 
 const DrawerNavigator = createDrawerNavigator({
     Home: {
-        screen: HomeScreen,
+        screen: FindExpertsScreen,
         navigationOptions: {
             title: "Home",
             drawerIcon: ({ tintColor }) => <Feather name="home" size={16} color={tintColor} />
@@ -35,7 +35,7 @@ const DrawerNavigator = createDrawerNavigator({
         screen: RegisterScreen,
         navigationOptions: {
             title: "Register",
-            drawerIcon: ({ tintColor }) => <Feather name="user" size={16} color={tintColor} />
+            drawerIcon: ({ tintColor }) => <Feather name="register" size={16} color={tintColor} />
         }
     },
 
