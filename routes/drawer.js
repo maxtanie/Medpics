@@ -7,6 +7,7 @@ import LoginScreen from "../screens/PatientsLoginScreen";
 import AccountProvidersScreen from "../screens/AccountProvidersScreen";
 import ProfilePageProvidersScreen from "../screens/ProfilePageProvidersScreen";
 import FindExpertsScreen from "../screens/FindExpertsScreen";
+import ConsultsScreen from "../screens/ConsultsScreen";
 
 import SideBar from "../components/SideBar";
 import { Dimensions } from "react-native";
@@ -16,7 +17,7 @@ import { Feather } from "@expo/vector-icons";
 
 const DrawerNavigator = createDrawerNavigator({
     Home: {
-        screen: FindExpertsScreen,
+        screen: ConsultsScreen,
         navigationOptions: {
             title: "Home",
             drawerIcon: ({ tintColor }) => <Feather name="home" size={16} color={tintColor} />

@@ -6,25 +6,55 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { FontAwesome5 } from "@expo/vector-icons";
 import fond from "../assets/find-experts/fond.png";
 
-function HomeScreen({ navigation }) {
+function AppointmentScreen({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home Screen</Text>
+            <Text>Appointment Screen</Text>
             <Button
-                title="Go to Details"
-                onPress={() => navigation.navigate('Aort')}
+                title="Go to Consult"
+                onPress={() => navigation.navigate('Consult')}
             />
         </View>
     );
 }
 
-function DetailsScreen() {
+function ConsultScreen({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Details Screen</Text>
+            <Text>Consult Screen</Text>
+            <Button
+                title="Go to Favorites"
+                onPress={() => navigation.navigate('Favorites')}
+            />
         </View>
     );
 }
+
+function FavoritesScreen({ navigation }) {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>Favorites Screen</Text>
+            <Button
+                title="Go to Profile"
+                onPress={() => navigation.navigate('Profile')}
+            />
+        </View>
+    );
+}
+
+function ProfileScreen({ navigation }) {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>Profile Screen</Text>
+            <Button
+                title="Go to Appointement"
+                onPress={() => navigation.navigate('Appointement')}
+            />
+            
+        </View>
+    );
+}
+
 
 const Stack = createStackNavigator();
 
@@ -87,14 +117,7 @@ export default function FindExpertsScreen() {
                         </View>
                     </View>
                 </View>
-                <View>
-                    <NavigationContainer>
-                        <Stack.Navigator initialRouteName="Abdomen">
-                            <Stack.Screen name="Abdomen" component={HomeScreen} />
-                            <Stack.Screen name="Aort" component={DetailsScreen} />
-                        </Stack.Navigator>
-                    </NavigationContainer>
-                </View>
+                
 
                 <View  style={{flex: 1, flexDirection: "row", flexWrap: "wrap", textAlign: "center", justifyContent: "center", alignItems: "center", marginTop: 30 }}>
                     {specialistsName.map((name, index) => {
@@ -137,9 +160,21 @@ export default function FindExpertsScreen() {
                             <Text style={{fontWeight: "bold", color: "#1665C1"}}>Radiology</Text>
                             </View>
                             
+
                             
                         </View>
                     </View>
+
+                    <View>
+                    <NavigationContainer>
+                        <Stack.Navigator initialRouteName="Appointment">
+                            <Stack.Screen name="Appointment" component={AppointmentScreen}/>
+                            <Stack.Screen name="Consult" component={ConsultScreen} />
+                            <Stack.Screen name="Favorites" component={FavoritesScreen} />
+                            <Stack.Screen name="Profile" component={ProfileScreen} />
+                        </Stack.Navigator>
+                    </NavigationContainer>
+                </View>
         
                 </View>
 
@@ -153,7 +188,12 @@ const styles = StyleSheet.create({
         paddingBottom: 0
     },
     nav : {
-        width: "70%", height: 50, backgroundColor: "#fff", borderRadius: 50, marginTop: -25, textAlign: "center",
+        width: "70%", 
+        height: 50, 
+        backgroundColor: "#fff", 
+        borderRadius: 50, 
+        marginTop: -25, 
+        textAlign: "center",
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
